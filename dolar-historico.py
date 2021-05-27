@@ -34,8 +34,8 @@ if tipo=="2":
 if tipo=="3":
     url= "https://mercados.ambito.com//dolarturista/historico-general/"
 
-desde = input('Ingrese Fecha de inicio (en formato Año-Mes-Día, Ejemplo,23-05-2021): ')
-hasta = input('Ingrese Fecha de fin (en formato Año-Mes-Día, Ejemplo,23-05-2021): ')
+desde = input('Ingrese Fecha de inicio (en formato Día-Mes-Año, Ejemplo,23-05-2021): ')
+hasta = input('Ingrese Fecha de fin (en formato Día-Mes-Año, Ejemplo,23-05-2021): ')
 
 req = requests.get(url+desde+'/'+hasta)
 
