@@ -4,7 +4,7 @@
 # Dolar History - Ambito Financiero Scrapping
 # https://github.com/st1tch-bl/dolar-history
 #
-# Copyright 2021 St1tch3
+# Copyright 2021 St1tch
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
