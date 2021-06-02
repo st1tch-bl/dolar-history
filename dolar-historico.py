@@ -22,6 +22,7 @@
 import requests
 import numpy as np
 import pandas as pd
+import datetime
 
 
 tipo = input('Ingrese 1 para Dolar Blue, 2 para Dolar Oficial o 3 para Dolar Turista: ')
@@ -45,14 +46,16 @@ if tipo=="3":
     df = pd.DataFrame(data2, columns = ['Fecha','Venta'])
     df = df.drop(labels=0, axis=0)
     df['Venta'] = df['Venta'].str.replace(",", ".").astype(float)
-    df['Fecha']=pd.to_datetime(df['Fecha'])
-    df = df.set_index("Fecha")
 else:
     df = pd.DataFrame(data2, columns = ['Fecha','Compra','Venta'])
     df = df.drop(labels=0, axis=0)
     df['Compra'] = df['Compra'].str.replace(",", ".").astype(float)
     df['Venta'] = df['Venta'].str.replace(",", ".").astype(float)
-    df['Fecha']=pd.to_datetime(df['Fecha'])
-    df = df.set_index("Fecha")
+
+for i in range(1,len(df)+1,1):
+	var1=df.at[i,"Fecha"].split("-")
+	var1 = list(map(int, var1))
+	df.at[i, 'Fecha']= datetime.date(var1[2],var1[1],var1[0])
+df = df.set_index("Fecha")
 
 print(df)
